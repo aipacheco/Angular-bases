@@ -1,0 +1,28 @@
+<h3 class="mt-5">Listado de Héroes</h3>
+
+<!-- le podemos poner un if al botón para que no se muestre si no quedan elementos en el array -->
+<button
+*ngIf="heroNames.length > 0"
+(click)="removeLastHero()"
+class="btn btn-outline-danger ">
+  Borrar último héroe
+</button>
+
+<!-- para poder usar el else lo nombramos como una referencia local -->
+<div *ngIf="deletedHero; else nothingDeleted">
+  <h3>Héroe borrado <small class="text-danger">{{deletedHero}}</small> </h3>
+</div>
+
+<!-- aqui lo usamos con ng-template seguido de # para que se renderice condicionalmente -->
+<ng-template #nothingDeleted>
+  <h3 > No se ha borrado nada</h3>
+</ng-template>
+
+<ul class="mt-2 list-group">
+
+  <!-- ng-for para recorrer el array de heroNames -->
+<li *ngFor= "let name of heroNames"
+  class="list-group-item"
+>{{name}}</li>
+
+</ul>

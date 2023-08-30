@@ -27,5 +27,4 @@ export class CounterComponent{
     this.counter = 10 //para resetear a 10
   }
 
-
 }

@@ -1,0 +1,41 @@
+<h1>{{name}}</h1>
+
+<dl>
+  <td>Nombre:</td>
+  <dd>{{name}}</dd>
+  <td>Edad:</td>
+  <dd>{{age}}</dd>
+  <td>Método:</td>
+  <dd>{{getHeroDescription()}}
+    <!-- Necesario paréntesis al ser método -->
+  </dd>
+  <td>Capitalizado:</td>
+  <dd>{{capitalizedName}}
+    <!-- No necesario paréntesis por ser get -->
+  </dd>
+</dl>
+
+<!-- <button (click)="changeAge()" class="btn btn-primary mx-2">Cambiar edad</button> -->
+<!-- <button (click)="changeHero()" class="btn btn-primary">Cambiar nombre</button> -->
+
+<!-- Igualamos el ngIf a una expresión para que solo se muestre el boton si se cumple -->
+<button
+*ngIf="age === 45"
+(click)="changeAge()"
+class="btn btn-primary mx-2">
+Cambiar edad
+</button>
+
+<button
+*ngIf="name !== 'Spiderman' "
+(click)="changeHero()"
+class="btn btn-primary">
+Cambiar nombre
+</button>
+
+<button
+
+(click)="resetForm()"
+class="btn btn-primary mx-2">
+Reset
+</button>
