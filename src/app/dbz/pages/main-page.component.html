@@ -1,0 +1,23 @@
+<h1>DBZ personajes</h1>
+
+<hr />
+
+<div class="row">
+  <div class="col">
+    <app-dbz-list
+      [characterList]="characters"
+      (onDelete)="onDeleteCharacter($event)"
+
+    ></app-dbz-list>
+  </div>
+  <div class="col">
+    <app-dbz-form
+      (onNewCharacter)="onNewCharacter($event)"
+    ></app-dbz-form>
+  </div>
+</div>
+
+<!-- (onDelete)="dbzService.deleteCharacterById($event)" Si el servicio es público lo podemos usar así-->
+<!-- tenemos que crear un método nuevo porque siendo privado dbzService no podemos acceder al método deleteCharacterById -->
+<!-- (onNewCharacter)="dbzService.onNewCharacter($event)" si el servicio es publico lo podemos llamar así -->
+<!-- tenemos que crear un metodo nuevo porque si es privado dbzService no podemos acceder al método addCharacter -->
